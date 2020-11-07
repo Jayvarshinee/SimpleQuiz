@@ -4,10 +4,10 @@ let choices_div = document.getElementById("choices");
 let next_btn = document.getElementById("next-btn");
 let submit_btn = document.getElementById("submit-btn");
 let msg_div = document.getElementById("message");
+let qno_h3 = document.getElementById("qno");
 
 let questionIndex =0;
 let score =0;
-
 
 function Question(text, choices, answer) {
     this.text = text;
@@ -57,6 +57,9 @@ function guess(id,choices,i){
 function showQuestion(i){
     let q = questions[i];
     question_p.innerHTML = q.text;
+    //progress of question no
+    let currentqno = questionIndex+1;
+    qno_h3.innerHTML = "Question "+ currentqno+" of "+ questions.length;
 }
 
 function showChoices(i){
@@ -78,6 +81,7 @@ submit_btn.addEventListener("click",function(){
     next_btn.classList.add("hide");
     submit_btn.classList.add("hide");
     msg_div.classList.add("hide");
+    qno_h3.classList.add("hide");
 });
 
 
@@ -99,6 +103,7 @@ start_btn.addEventListener("click",function(){
     showQuestion(questionIndex);
     showChoices(questionIndex);
     next_btn.classList.remove("hide");
+    qno_h3.classList.remove("hide");
 });
 
 
