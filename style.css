@@ -92,3 +92,15 @@ body{
 .btn-wrong{
     background-color: red;
 }
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#qno{
+    border: 2px solid orangered;
+    font-weight: 500;
+    font-size: medium;
+    margin: 10px;
+    padding: 20px;
+}
